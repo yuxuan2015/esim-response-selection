@@ -28,7 +28,7 @@ if __name__ == '__main__':
     input_file, output_file = sys.argv[1:3]
     sentences = []
     for line in open(input_file):
-        texts = line.decode("utf-8").replace("\n", "").split("\t")[1:]
+        texts = line.replace("\n", "").split("\t")[1:]
         for uter in texts:
             sentences.append(uter.split())
 

@@ -31,7 +31,7 @@ If you use this code as part of any published research, please acknowledge one o
 pip install gensim
 ```
 
-2. Tensorflow 1.9-1.12 + Python2.7
+2. Tensorflow 1.9-1.12 + Python3.6
 
 ## Steps
 1. Download the [Ubuntu dataset](https://www.dropbox.com/s/2fdn26rj6h9bpvl/ubuntu_data.zip?dl=0
@@ -52,6 +52,6 @@ bash run_train_word2vec.sh
 
 5. Train and test ESIM, the log information is in `log.txt` file. You could find an example log file in `log_example.txt`.
 ```bash
-cd scripts/esim
+cd ../scripts/esim
 bash run.sh
 ```

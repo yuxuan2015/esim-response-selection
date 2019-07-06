@@ -47,7 +47,7 @@ def build_dictionary(org_path, dst_path, is_lowercase=False):
                 print(count)
             count += 1
 
-    tokens = token_to_freqs.keys()
+    tokens = list(token_to_freqs.keys())
     freqs = token_to_freqs.values()
 
     sorted_idx = numpy.argsort(freqs)
