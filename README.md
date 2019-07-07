@@ -37,7 +37,7 @@ pip install gensim
 1. Download the [Ubuntu dataset](https://www.dropbox.com/s/2fdn26rj6h9bpvl/ubuntu_data.zip?dl=0
 ) released by (Xu et al, 2017)
 
-  百度云盘地址：https://pan.baidu.com/s/12ntr7_X7wIilIxMfweRKOg 提取码：3k3y
+  百度云盘地址：https://pan.baidu.com/s/1h-35Tm8419nyfV9LW4rlaA 提取码：ek41
 
 2. Unzip the dataset and put data directory into `data/`
 
