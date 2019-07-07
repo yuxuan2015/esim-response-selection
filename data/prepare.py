@@ -29,7 +29,7 @@ from collections import OrderedDict
 def build_dictionary(org_path, dst_path, is_lowercase=False):
     token_to_freqs = OrderedDict()
     count = 0
-    with open(org_path, 'r') as f:
+    with open(org_path, 'r', encoding="utf8") as f:
         for line in f:
             if is_lowercase:
                 line = line.lower()
@@ -48,7 +48,7 @@ def build_dictionary(org_path, dst_path, is_lowercase=False):
             count += 1
 
     tokens = list(token_to_freqs.keys())
-    freqs = token_to_freqs.values()
+    freqs = list(token_to_freqs.values())
 
     sorted_idx = numpy.argsort(freqs)
     sorted_tokens = [tokens[i] for i in sorted_idx[::-1]]
@@ -62,7 +62,7 @@ def build_dictionary(org_path, dst_path, is_lowercase=False):
     for i, t in enumerate(sorted_tokens):
         token_to_idx[t] = i + 4
 
-    with open(dst_path, 'w') as f:
+    with open(dst_path, 'w', encoding="utf8") as f:
         for t in token_to_idx.keys():
             f.write(t + '\n')
 
@@ -70,8 +70,8 @@ def build_dictionary(org_path, dst_path, is_lowercase=False):
 
 
 def concat_context(org_file, dst_file):
-    with open(org_file, 'r') as fi:
-        with open(dst_file, 'w') as fo:
+    with open(org_file, 'r', encoding="utf8") as fi:
+        with open(dst_file, 'w', encoding="utf8") as fo:
             for idx, line in enumerate(fi):
                 arr = line.strip().split('\t')
                 label = arr[0]
@@ -89,8 +89,10 @@ def make_dirs(dirs):
 
 if __name__ == '__main__':
     base_dir = os.path.dirname(os.path.realpath(__file__))
-    org_dir = os.path.join(base_dir, 'ubuntu_data/')
-    dst_dir = os.path.join(base_dir, 'ubuntu_data_concat/')
+    # org_dir = os.path.join(base_dir, 'ubuntu_data/')
+    # dst_dir = os.path.join(base_dir, 'ubuntu_data_concat/')
+    org_dir = os.path.join(base_dir, 'douban/')
+    dst_dir = os.path.join(base_dir, 'douban_concat/')
     make_dirs([dst_dir])
 
     print("***** Concatenate Context ***** ")

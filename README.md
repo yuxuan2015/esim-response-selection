@@ -49,11 +49,11 @@ python prepare.py
 
 4. Train word2vec
 ```bash
-bash run_train_word2vec.sh
+sh run_train_word2vec.sh
 ```
 
 5. Train and test ESIM, the log information is in `log.txt` file. You could find an example log file in `log_example.txt`.
 ```bash
 cd ../scripts/esim
-bash run.sh
+sh run.sh
 ```

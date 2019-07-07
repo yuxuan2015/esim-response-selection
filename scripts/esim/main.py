@@ -224,7 +224,7 @@ def load_word_embedding(token_to_idx):
             for line in f:
                 tokens = line.strip().split(" ")
                 token = tokens[0]
-                vector = map(float, tokens[1:])
+                vector = list(map(float, tokens[1:]))
                 if token in token_to_idx and token_to_idx[token] < FLAGS.vocab_size:
                     embedding_np[token_to_idx[token], :] = vector
 
@@ -634,6 +634,7 @@ def main(_):
                          batch_size=FLAGS.train_batch_size,
                          vocab_size=FLAGS.vocab_size,
                          shuffle=True)
+    print(type(train))
     valid = TextIterator(FLAGS.valid_file, token_to_idx,
                          batch_size=FLAGS.valid_batch_size,
                          vocab_size=FLAGS.vocab_size,
@@ -688,6 +689,7 @@ def main(_):
             tf.logging.info("***** Training at Epoch %s *****", eidx)
             n_samples = 0
             for instance in train:
+                print(instance)
                 n_samples += len(instance)
                 uidx += 1
 

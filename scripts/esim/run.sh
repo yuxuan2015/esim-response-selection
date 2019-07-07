@@ -1,6 +1,7 @@
 #!/bin/bash
 
-DATA_DIR=../../data/ubuntu_data_concat
+#DATA_DIR=../../data/ubuntu_data_concat
+DATA_DIR=../../data/douban_concat
 
 CUDA_VISIBLE_DEVICES=0 python -u main.py \
 --train_file=$DATA_DIR/train.txt \
