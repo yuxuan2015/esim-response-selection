@@ -56,7 +56,7 @@ class TextIterator:
     def __iter__(self):
         return self
 
-    def next(self):
+    def __next__(self):
         if self.end_of_data:
             self.end_of_data = False
             self.input_file.seek(0)
@@ -85,8 +85,8 @@ class TextIterator:
                 length_idx = length_array.argsort()
                 # shuffle mini-batch
                 tindex = []
-                small_index = range(
-                    int(math.ceil(len(length_idx) * 1. / self.batch_size)))
+                small_index = list(range(
+                    int(math.ceil(len(length_idx) * 1. / self.batch_size))))
                 random.shuffle(small_index)
                 for i in small_index:
                     if (i + 1) * self.batch_size > len(length_idx):

@@ -27,6 +27,7 @@ import numpy
 import tensorflow as tf
 
 from data_iterator import TextIterator
+from collections import Iterable
 
 
 flags = tf.flags
@@ -689,7 +690,6 @@ def main(_):
             tf.logging.info("***** Training at Epoch %s *****", eidx)
             n_samples = 0
             for instance in train:
-                print(instance)
                 n_samples += len(instance)
                 uidx += 1
 
