@@ -27,33 +27,23 @@ If you use this code as part of any published research, please acknowledge one o
 
 ## Requirement
 1. gensim
-```bash
-pip install gensim
+
+2. Tensorflow 1.11 + Python3.6
+
+## install
+```
+pip install -r requirements.txt
 ```
 
-2. Tensorflow 1.9-1.12 + Python3.6
-
 ## Steps
-1. Download the [Ubuntu dataset](https://www.dropbox.com/s/2fdn26rj6h9bpvl/ubuntu_data.zip?dl=0
+1.1 Download the [Ubuntu dataset](https://www.dropbox.com/s/2fdn26rj6h9bpvl/ubuntu_data.zip?dl=0
 ) released by (Xu et al, 2017)
 
   百度云盘地址：https://pan.baidu.com/s/1h-35Tm8419nyfV9LW4rlaA 提取码：ek41
 
-2. Unzip the dataset and put data directory into `data/`
+1.2 Unzip the dataset and put data directory into `data/`
 
-3. Preprocess dataset, including concatenatate context and build vocabulary
-```bash
-cd data
-python prepare.py
+1.3 输入如下命令
 ```
-
-4. Train word2vec
-```bash
-sh run_train_word2vec.sh
-```
-
-5. Train and test ESIM, the log information is in `log.txt` file. You could find an example log file in `log_example.txt`.
-```bash
-cd ../scripts/esim
 sh run.sh
 ```
